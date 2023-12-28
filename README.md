@@ -1,27 +1,65 @@
-# AppGestorFinanceiro
+<h1 align="center"> Gestor Financeiro</h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.10.
+![Badge Status](https://img.shields.io/static/v1?label=STATUS&message=Em_desenvolvimento&color=blue&style=for-the-badge)
 
-## Development server
+## :open_file_folder: Imagem 
+**Em breve...**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## :clipboard: Descrição
 
-## Code scaffolding
+- O projeto visa criar um sistema abrangente de gerenciamento de despesas pessoais, permitindo que os usuários cadastrem metas, registrem suas receitas e despesas.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :wrench: Funcionalidades
 
-## Build
+- `Register`: Page para novos usuários se registrarem .
+- `Login` : Page que o usuário cadastrado se autentica para acessar a aplicação.
+- `Dashboard`: Page com metas criadas e as finanças do usuário autenticado.
+- `Metas`: Recursos de adicionar, editar e deletar metas.
+- `Finanças`: Recursos de adicionar, editar e deletar finanças.
+- `Page-Notfound`: Tela de redirecionamento rotas não existentes.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Técnicas e tecnologias utilizadas
 
-## Running unit tests
+[![My Skills](https://skillicons.dev/icons?i=angular,typescript,scss,vscode,)](https://skillicons.dev)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Angular 15
+- TypeScript
+- PrimeNG
+- PrimeFlex
+- SCSS
+- Mobile Firs
+- Cookies
 
-## Running end-to-end tests
+## :rocket: Inicialização
+Esse projeto foi desenvolvido em ambiente Windows, utilizando as tecnologias citadas anteriormente.
+Caso você utilize outro sistema operacional, a configuração inicial do projeto pode ser um pouco diferente.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 📁 Acesso ao projeto
 
-## Further help
+**Em breve...**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## :large_blue_circle: Implementações futuras
+- [ ] Page de registro de usuários
+- [ ] Page de autenticação de usuários
+- [ ] Navbar
+- [ ] Page de dashboard
+- [ ] Page not found
+- [ ] Recursos de metas
+- [ ] Recursos de finanças
+
+## :mag_right: Referências
+- [Angular](https://v15.angular.io/docs)
+- [RXJS](https://rxjs.dev/guide/overview)
+- [PrimeNG](https://www.primefaces.org/primeng-v15-lts/installation)
+- [PrimeFlex](https://primeflex.org/installation)
+- [PrimeIcons](https://primeng.org/icons)
+
+## Autor
+
+<img src="https://user-images.githubusercontent.com/87622645/157755137-8d22a951-d323-4c33-814e-c0351ebefafe.png" width=80><br>
+<sub>Bruno Staine Caires de Oliveira</sub><br>
+https://github.com/Brunostaine
+
+## Imagem Mobile
+
+**Em breve...**
