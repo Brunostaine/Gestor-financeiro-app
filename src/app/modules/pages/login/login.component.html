@@ -1,0 +1,43 @@
+<div>
+    <form class="form">
+        <img
+            src="../../../../assets/images/logo.png"
+            alt
+        >
+        <section class="container-login">
+            <h1>Login</h1>
+            <p class="pl-4 pr-4">Faça o login com uma conta existente.</p>
+            <div class="grid flex-column pl-4 pr-4 mb-4">
+                <label for="email">E-mail</label>
+                <input
+                    pInputText
+                    id="email"
+                >
+            </div>
+            <div class="grid flex-column pl-4 pr-4 mb-4">
+                <label for="password">Senha</label>
+                <input
+                    pInputText
+                    id="password"
+                >
+            </div>
+            <div class="grid flex-column pl-4 pr-4 mb-4">
+                <button
+                    pButton
+                    class="w-full flex justify-content-center"
+                >
+                    ENTRAR
+                </button>
+            </div>
+            <p class="text-center pl-4 pr-4 mb-4">
+                Não tem conta?
+                <a
+                    class="link"
+                    routerLink="/register"
+                >
+                    Cadastre-se
+                </a>
+            </p>
+        </section>
+    </form>
+</div>

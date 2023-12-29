@@ -53,6 +53,7 @@ Caso você utilize outro sistema operacional, a configuração inicial do projet
 - [PrimeNG](https://www.primefaces.org/primeng-v15-lts/installation)
 - [PrimeFlex](https://primeflex.org/installation)
 - [PrimeIcons](https://primeng.org/icons)
+- [Ngx-cookies](https://www.npmjs.com/package/ngx-cookie-service)
 
 ## Autor
 
