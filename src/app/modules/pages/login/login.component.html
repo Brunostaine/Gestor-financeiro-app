@@ -1,5 +1,5 @@
 <div>
-    <form class="form">
+    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()">
         <img
             src="../../../../assets/images/logo.png"
             alt
@@ -12,6 +12,7 @@
                 <input
                     pInputText
                     id="email"
+                    formControlName="username"
                 >
             </div>
             <div class="grid flex-column pl-4 pr-4 mb-4">
@@ -19,12 +20,15 @@
                 <input
                     pInputText
                     id="password"
+                    formControlName="password"
+                    type="password"
                 >
             </div>
             <div class="grid flex-column pl-4 pr-4 mb-4">
                 <button
                     pButton
                     class="w-full flex justify-content-center"
+                    type="submit"
                 >
                     ENTRAR
                 </button>
