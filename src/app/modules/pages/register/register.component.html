@@ -1,14 +1,15 @@
 <div>
-  <form class="form">
+  <form class="form" [formGroup]="signupForm" (ngSubmit)="onSubmitSignupForm()">
       <img src="../../../../assets/images/logo.png" alt="">
         <section class="container-login">
             <h1>Registre-se</h1>
             <p class="pl-4 pr-4">Crie uma conta gratuita.</p>
             <div class="grid flex-column pl-4 pr-4 mb-4">
-                <label for="name">Nome</label>
+                <label for="nome">Nome</label>
                 <input
                     pInputText
-                    id="name"
+                    id="nome"
+                    formControlName="nome"
                 >
             </div>
             <div class="grid flex-column pl-4 pr-4 mb-4">
@@ -16,6 +17,7 @@
                 <input
                     pInputText
                     id="email"
+                    formControlName="username"
                 >
             </div>
             <div class="grid flex-column pl-4 pr-4 mb-4">
@@ -23,14 +25,17 @@
                 <input
                     pInputText
                     id="password"
+                    formControlName="password"
+                    type="password"
                 >
             </div>
             <div class="grid flex-column pl-4 pr-4 mb-4">
               <button
                   pButton
                   class="w-full flex justify-content-center"
+                  type="submit"
               >
-                  ENTRAR
+                  CADASTRAR
               </button>
           </div>
             <p class="text-center pl-4 pr-4 mb-4">Já tem uma conta? <a routerLink="/login" class="link">Fazer login</a></p>
