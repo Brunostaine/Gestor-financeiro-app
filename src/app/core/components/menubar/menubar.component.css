@@ -1,0 +1,27 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #FFF;
+  margin-bottom: 16px;
+}
+
+.menu img {
+  width: 100%;
+  min-width: 150px;
+  max-width: 200px;
+}
+
+.icone {
+  color: #FFF;
+  position: absolute;
+  right: 8px;
+  top: 16px;
+  font-size: 18px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.icone:before {
+  margin-right: 10px;
+}
