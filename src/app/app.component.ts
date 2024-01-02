@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeNGConfig } from 'primeng/api';
+import { UserService } from './core/services/user/user.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ import { PrimeNGConfig } from 'primeng/api';
 export class AppComponent implements OnInit{
 
   title = 'app-gestor-financeiro';
-  constructor(private primengConfig: PrimeNGConfig) {}
+  constructor(private primengConfig: PrimeNGConfig, public userService: UserService) {}
 
   ngOnInit(): void {
     this.primengConfig.ripple = true;
