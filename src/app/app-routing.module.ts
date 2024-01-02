@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './modules/pages/dashboard/dashboard.component';
+import { AuthGuard } from './core/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', component: DashboardComponent },
+  { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
   {
     path: 'login',
     loadComponent: () =>
@@ -13,10 +13,19 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    loadComponent: () => import('./modules/pages/register/register.component').then(
-      (c) => c.RegisterComponent
-    )
-  }
+    loadComponent: () =>
+      import('./modules/pages/register/register.component').then(
+        (c) => c.RegisterComponent
+      ),
+  },
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./modules/pages/dashboard/dashboard.component').then(
+        (c) => c.DashboardComponent
+      ),
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({
