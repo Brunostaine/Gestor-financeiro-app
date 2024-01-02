@@ -39,9 +39,9 @@ Caso você utilize outro sistema operacional, a configuração inicial do projet
 **Em breve...**
 
 ## :large_blue_circle: Implementações futuras
-- [ ] Page de registro de usuários
-- [ ] Page de autenticação de usuários
-- [ ] Navbar
+- [x] Page de registro de usuários
+- [x] Page de autenticação de usuários
+- [x] Navbar
 - [ ] Page de dashboard
 - [ ] Page not found
 - [ ] Recursos de metas
