@@ -116,7 +116,7 @@
                         <td>{{finance?.valor | currency: "BRL"}}</td>
                         <td>{{finance?.categoria}}</td>
                         <td
-                            [pTooltip]="finance?.categoria"
+                            [pTooltip]="finance?.descricao"
                             tooltipPosition="top"
                         >
                             {{finance?.descricao}}
