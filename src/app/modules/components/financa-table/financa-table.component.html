@@ -1,0 +1,150 @@
+<div class="grid">
+    <div class="col-12">
+        <p-card
+            styleClass="shadow-3 m-5 text-indigo-800"
+            header="Minhas financas"
+        >
+            <p-table
+                #financasTable
+                [value]="financas"
+                [rows]="10"
+                [paginator]="true"
+                [responsive]="true"
+                [globalFilterFields]="['nome']"
+                [tableStyle]="{'min-width': '75rem'}"
+                [(selection)]="financeSelected"
+                [rowHover]="true"
+                [showCurrentPageReport]="true"
+                dataKey="id"
+                currentPageReportTemplate="Mostrando {first} de {last} de {totalRecords} financas."
+            >
+
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="tipo">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex justify-content-between align-items-center">Tipo</div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <p-sortIcon field="tipo"></p-sortIcon>
+                                    <p-columnFilter
+                                        type="text"
+                                        field="tipo"
+                                        display="menu"
+                                        matchMode="contains"
+                                        [showMatchModes]="false"
+                                        [showOperator]="false"
+                                        [showAddButton]="false"
+                                    ></p-columnFilter>
+                                </div>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="valor">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex justify-content-between align-items-center">Valor</div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <p-sortIcon field="valor"></p-sortIcon>
+                                    <p-columnFilter
+                                        type="text"
+                                        field="valor"
+                                        display="menu"
+                                        matchMode="contains"
+                                        [showMatchModes]="false"
+                                        [showOperator]="false"
+                                        [showAddButton]="false"
+                                    ></p-columnFilter>
+                                </div>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="categoria">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex justify-content-between align-items-center">Categoria</div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <p-sortIcon field="categoria"></p-sortIcon>
+                                    <p-columnFilter
+                                        type="text"
+                                        field="categoria"
+                                        display="menu"
+                                        matchMode="contains"
+                                        [showMatchModes]="false"
+                                        [showOperator]="false"
+                                        [showAddButton]="false"
+                                    ></p-columnFilter>
+                                </div>
+                            </div>
+                        </th>
+
+                        <th pSortableColumn="descricao">
+                            <div class="flex justify-content-between align-items-center">
+                                <div class="flex justify-content-between align-items-center">Descrição</div>
+                                <div class="flex justify-content-between align-items-center">
+                                    <p-sortIcon field="descricao"></p-sortIcon>
+                                    <p-columnFilter
+                                        type="text"
+                                        field="descricao"
+                                        display="menu"
+                                        matchMode="contains"
+                                        [showMatchModes]="false"
+                                        [showOperator]="false"
+                                        [showAddButton]="false"
+                                    ></p-columnFilter>
+                                </div>
+                            </div>
+                        </th>
+
+                        <th>
+                            <div class="flex justify-content-center">
+                                <p-button
+                                    styleClass="p-button-info"
+                                    icon="pi pi-plus"
+                                    label="Adicionar"
+                                    pTooltip="Adicionar Finança"
+                                    tooltipPosition="top"
+                                ></p-button>
+                            </div>
+                        </th>
+                    </tr>
+                </ng-template>
+
+                <ng-template
+                    pTemplate="body"
+                    let-finance
+                >
+                    <tr>
+                        <td>{{finance?.tipo}}</td>
+                        <td>{{finance?.valor | currency: "BRL"}}</td>
+                        <td>{{finance?.categoria}}</td>
+                        <td
+                            [pTooltip]="finance?.categoria"
+                            tooltipPosition="top"
+                        >
+                            {{finance?.descricao}}
+                        </td>
+                        <td>
+                            <div class="flex justify-content-center align-content-center align-items-center gap-3">
+                                <button
+                                    pButton
+                                    pRipple
+                                    icon="pi pi-pencil"
+                                    class="p-button-rounded p-button-warning"
+                                    pTooltip="Editar finança"
+                                    tooltipPosition="top"
+                                ></button>
+                                <button
+                                    pButton
+                                    pRipple
+                                    icon="pi pi-trash"
+                                    class="p-button-rounded p-button-danger"
+                                    pTooltip="Excluir finança"
+                                    tooltipPosition="top"
+                                ></button>
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+
+            </p-table>
+        </p-card>
+    </div>
+</div>
