@@ -2,10 +2,10 @@ import { CookieService } from 'ngx-cookie-service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AuthUserRequest } from 'src/app/shared/models/interfaces/auth/authUserRequest';
-import { AuthUserResponse } from 'src/app/shared/models/interfaces/auth/authUserResponse';
-import { SignupUserRequest } from 'src/app/shared/models/interfaces/user/signupUserRequest';
-import { SignupUserResponse } from 'src/app/shared/models/interfaces/user/signupUserResponse';
+import { AuthUserRequest } from 'src/app/shared/interfaces/auth/authUserRequest';
+import { AuthUserResponse } from 'src/app/shared/interfaces/auth/authUserResponse';
+import { SignupUserRequest } from 'src/app/shared/interfaces/user/signupUserRequest';
+import { SignupUserResponse } from 'src/app/shared/interfaces/user/signupUserResponse';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -35,5 +35,9 @@ export class UserService {
   isLoggedIn(): boolean {
     const JWT_TOKEN = this.cookie.get('USER_INFO');
     return JWT_TOKEN ? true : false;
+  }
+
+  logout(): void {
+    this.cookie.delete('USER_INFO')
   }
 }

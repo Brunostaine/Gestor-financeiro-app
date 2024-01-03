@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { UserService } from '../../services/user/user.service';
 
 @Component({
   selector: 'app-menubar',
@@ -10,13 +11,13 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class MenubarComponent implements OnInit {
 
-  constructor(private cookie: CookieService, private router: Router) { }
+  constructor(private cookie: CookieService, private router: Router, private userService: UserService) { }
 
   ngOnInit() {
   }
 
   handleLogout(): void {
-    this.cookie.delete('USER_INFO')
+    this.userService.logout()
     this.router.navigate(['/login'])
   }
 

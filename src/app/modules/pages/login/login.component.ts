@@ -8,7 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { UserService } from 'src/app/core/services/user/user.service';
-import { AuthUserRequest } from 'src/app/shared/models/interfaces/auth/authUserRequest';
+import { AuthUserRequest } from 'src/app/shared/interfaces/auth/authUserRequest';
 
 @Component({
   selector: 'app-login',

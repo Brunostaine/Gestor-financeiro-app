@@ -6,7 +6,7 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { UserService } from 'src/app/core/services/user/user.service';
-import { SignupUserRequest } from 'src/app/shared/models/interfaces/user/signupUserRequest';
+import { SignupUserRequest } from 'src/app/shared/interfaces/user/signupUserRequest';
 
 @Component({
   selector: 'app-register',

@@ -101,6 +101,7 @@
                                     label="Adicionar"
                                     pTooltip="Adicionar Finança"
                                     tooltipPosition="top"
+                                    (onClick)="handleFinancaEvent(addFinancaEvent)"
                                 ></p-button>
                             </div>
                         </th>
@@ -130,6 +131,7 @@
                                     class="p-button-rounded p-button-warning"
                                     pTooltip="Editar finança"
                                     tooltipPosition="top"
+                                    (click)="handleFinancaEvent(editFinancaEvent, finance?.id)"
                                 ></button>
                                 <button
                                     pButton

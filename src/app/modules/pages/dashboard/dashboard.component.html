@@ -1,1 +1,4 @@
-<app-financa-table [financas]="financasData"></app-financa-table>
+<app-financa-table
+    [financas]="financasData"
+    (financaEvent)="handleFinancaAction($event)"
+></app-financa-table>

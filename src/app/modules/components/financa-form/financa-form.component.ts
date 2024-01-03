@@ -11,9 +11,9 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { Subject, takeUntil } from 'rxjs';
-import { FinancaService } from 'src/app/core/services/financa/financa.service';
+import { FinancaService } from 'src/app/core/services/financas/financa.service';
 import { Categorias } from 'src/app/shared/enums/categorias/categorias';
-import { CreateFinancaRequest } from 'src/app/shared/models/interfaces/financas/request/createFinancaRequest';
+import { CreateFinancaRequest } from 'src/app/shared/interfaces/financas/request/createFinancaRequest';
 
 @Component({
   selector: 'app-financa-form',

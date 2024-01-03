@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
-import { GetAllFinancasResponse } from 'src/app/shared/models/interfaces/financas/response/getAllFinancasResponse';
+import { FinancaEvent } from 'src/app/shared/enums/financas/financaEvent';
+import { EventAction } from 'src/app/shared/interfaces/financas/event/eventAction';
+import { GetAllFinancasResponse } from 'src/app/shared/interfaces/financas/response/getAllFinancasResponse';
 
 @Component({
   selector: 'app-financa-table',
@@ -15,10 +17,21 @@ import { GetAllFinancasResponse } from 'src/app/shared/models/interfaces/financa
 })
 export class FinancaTableComponent implements OnInit {
   @Input() financas: Array<GetAllFinancasResponse> = [];
+  @Output() financaEvent = new EventEmitter<EventAction>();
 
   public financeSelected!: GetAllFinancasResponse;
+  public addFinancaEvent = FinancaEvent.ADD_FINANCA_EVENT;
+  public editFinancaEvent = FinancaEvent.EDIT_FINANCA_EVENT;
 
   constructor() {}
 
   ngOnInit() {}
+
+  handleFinancaEvent(action: string, id?: string): void {
+    if (action && action !== '') {
+      const financaEvent = id && id !== '' ? { action, id } : { action };
+
+      this.financaEvent.emit(financaEvent);
+    }
+  }
 }

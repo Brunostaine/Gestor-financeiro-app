@@ -3,9 +3,10 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { Subject, takeUntil } from 'rxjs';
-import { FinancaService } from 'src/app/core/services/financa/financa.service';
+import { FinancaService } from 'src/app/core/services/financas/financa.service';
 import { FinancaTableComponent } from '../../components/financa-table/financa-table.component';
-import { GetAllFinancasResponse } from './../../../shared/models/interfaces/financas/response/getAllFinancasResponse';
+import { GetAllFinancasResponse } from '../../../shared/interfaces/financas/response/getAllFinancasResponse';
+import { EventAction } from 'src/app/shared/interfaces/financas/event/eventAction';
 
 @Component({
   selector: 'app-dashboard',
@@ -35,14 +36,17 @@ export class DashboardComponent implements OnInit, OnDestroy {
 
       .subscribe({
         next: (response) => {
-          console.log(response);
-
           this.financasData = response;
         },
         error: (err) => {
           console.log(err);
         },
       });
+  }
+
+  handleFinancaAction(action: EventAction): void {
+    console.log('evento recebido: ', action);
+
   }
 
   ngOnDestroy(): void {
