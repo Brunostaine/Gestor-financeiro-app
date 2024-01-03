@@ -5,6 +5,6 @@ import { MenubarComponent } from './components/menubar/menubar.component';
 @NgModule({
   declarations: [MenubarComponent],
   imports: [CommonModule],
-  exports: [MenubarComponent]
+  exports: [MenubarComponent],
 })
 export class CoreModule {}
