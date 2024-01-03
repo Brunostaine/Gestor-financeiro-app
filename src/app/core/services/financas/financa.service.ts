@@ -14,7 +14,8 @@ export class FinancaService {
   private API_URL = environment.API_URL;
   private JWT_TOKEN = this.cookie.get('USER_INFO');
   private httpOptions = {
-    headers: new HttpHeaders({ // Token pelo interceptor
+    headers: new HttpHeaders({
+      // Token pelo interceptor
       'Content-Type': 'application/',
       // Authorization: `Bearer ${this.JWT_TOKEN}`,
     }),
@@ -40,5 +41,10 @@ export class FinancaService {
       requests,
       this.httpOptions
     );
+  }
+
+  deleteFinanca(financa_id: string): Observable<any> {
+    const url = `${this.API_URL}/financas/${financa_id}`;
+    return this.http.delete(url, this.httpOptions);
   }
 }

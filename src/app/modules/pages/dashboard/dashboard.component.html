@@ -1,4 +1,7 @@
 <app-financa-table
     [financas]="financasData"
     (financaEvent)="handleFinancaAction($event)"
+    (deleteFinancaEvent)="handleDeleteFinancaAction($event)"
 ></app-financa-table>
+
+<p-confirmDialog [style]="{width: '50vw'}"></p-confirmDialog>
