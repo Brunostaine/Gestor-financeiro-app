@@ -35,8 +35,18 @@ export class LoginComponent implements OnInit {
   ) {}
 
   loginForm = this.fb.group({
-    username: ['', Validators.required],
-    password: ['', Validators.required],
+    username: [
+      '',
+      [
+        Validators.required,
+        Validators.email,
+        Validators.pattern('^[a-z0-9.+-]+@[a-z0-9.-]+.[a-z]{2,}$'),
+      ],
+    ],
+    password: [
+      '',
+      [Validators.required, Validators.min(6), Validators.maxLength(6)],
+    ],
   });
 
   ngOnInit() {}
@@ -55,7 +65,7 @@ export class LoginComponent implements OnInit {
               detail: `Bem vindo(a) !!`,
               life: 2500,
             });
-            this.router.navigate(['/'])
+            this.router.navigate(['/dashboard']);
           },
           error: (err) => {
             console.log(err);

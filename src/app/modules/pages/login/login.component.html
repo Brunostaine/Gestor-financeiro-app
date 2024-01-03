@@ -1,5 +1,9 @@
 <div>
-    <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmitLoginForm()">
+    <form
+        class="form"
+        [formGroup]="loginForm"
+        (ngSubmit)="onSubmitLoginForm()"
+    >
         <img
             src="../../../../assets/images/logo.png"
             alt
@@ -14,6 +18,15 @@
                     id="email"
                     formControlName="username"
                 >
+                <ng-container *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.touched || loginForm.get('username')?.dirty)">
+                    <ng-template [ngIf]="loginForm.get('username')?.hasError('required')">
+                        <small class="p-error pt-2">Email é obrigatório.</small>
+                    </ng-template>
+                </ng-container>
+                <ng-template [ngIf]="loginForm.get('username')?.hasError('pattern')">
+                    <small class="p-error pt-2">Email formato inválido.</small>
+                </ng-template>
+
             </div>
             <div class="grid flex-column pl-4 pr-4 mb-4">
                 <label for="password">Senha</label>
@@ -22,7 +35,17 @@
                     id="password"
                     formControlName="password"
                     type="password"
+                    minlength="6"
+                    maxlength="6"
                 >
+                <ng-container *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)">
+                    <ng-template [ngIf]="loginForm.get('password')?.hasError('required')">
+                        <small class="p-error pt-2">Senha é obrigatória.</small>
+                    </ng-template>
+                    <ng-template [ngIf]="loginForm.get('password')?.hasError('minlength')">
+                        <small class="p-error pt-2">Senha deve conter 6 digitos.</small>
+                    </ng-template>
+                </ng-container>
             </div>
             <div class="grid flex-column pl-4 pr-4 mb-4">
                 <button
