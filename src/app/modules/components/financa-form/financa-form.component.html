@@ -1,0 +1,13 @@
+<div>
+  <form [formGroup]="addFinancaForm"] (ngSubmit)="handleSubmitAddFinanca()">
+    <div class="card flex flex-column gap-3">
+      <input pInputText placeholder="tipo" formControlName="tipo">
+      <input pInputText placeholder="valor" formControlName="valor">
+      <input pInputText placeholder="descricao" formControlName="descricao">
+      <!-- dropdawn -->
+    </div>
+    <div class="flex flex-row justify-content-center align-items-center m-1">
+      <p-button type="submit" label="Adicionar"></p-button>
+    </div>
+  </form>
+</div>
